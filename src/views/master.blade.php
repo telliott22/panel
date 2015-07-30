@@ -10,12 +10,12 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link media="all" type="text/css" rel="stylesheet" href="{{asset("packages/zofe/rapyd/assets/demo/style.css")}}">
-    <!--link media="all" type="text/css" rel="stylesheet" href="{{asset("packages/zofe/rapyd/assets/redactor/css/redactor.css")}}"-->
+    <link media="all" type="text/css" rel="stylesheet" href="{{asset("packages/zofe/rapyd/assets/redactor/css/redactor.css")}}">
     <link media="all" type="text/css" rel="stylesheet" href="{{asset("packages/zofe/rapyd/assets/datepicker/datepicker3.css")}}">
     <link media="all" type="text/css" rel="stylesheet" href="{{asset("packages/zofe/rapyd/assets/autocomplete/autocomplete.css")}}">
     <link media="all" type="text/css" rel="stylesheet" href="{{asset("packages/zofe/rapyd/assets/autocomplete/bootstrap-tagsinput.css")}}">
     <link media="all" type="text/css" rel="stylesheet" href="{{asset("packages/zofe/rapyd/assets/colorpicker/css/bootstrap-colorpicker.min.css")}}">
-    <!--link media="all" type="text/css" rel="stylesheet" href="{{asset("packages/serverfireteam/rapyd-laravel/assets/colorpicker/css/bootstrap-colorpicker.min.css")}}" -->
+    <link media="all" type="text/css" rel="stylesheet" href="{{asset("packages/serverfireteam/rapyd-laravel/assets/colorpicker/css/bootstrap-colorpicker.min.css")}}" >
 
     <title>@yield('title')</title>
     <!-- compiled styles -->
@@ -69,24 +69,24 @@
         });
     </script>
 
- 
+
 
     <!-- Custom Theme JavaScript -->
     <script src="{{asset("packages/serverfireteam/panel/js/sb-admin-2.js")}}"></script>
 
-    <!--script src="{{asset("packages/zofe/rapyd/assets/redactor/jquery.browser.min.js")}}"></script-->
-    <!--script src="{{asset("packages/zofe/rapyd/assets/redactor/redactor.min.js")}}"></script-->
+    <script src="{{asset("packages/zofe/rapyd/assets/redactor/jquery.browser.min.js")}}"></script>
+    <script src="{{asset("packages/zofe/rapyd/assets/redactor/redactor.min.js")}}"></script>
     <script src="{{asset("packages/zofe/rapyd/assets/datepicker/bootstrap-datepicker.js")}}"></script>
     <script src="{{asset("packages/zofe/rapyd/assets/datepicker/locales/bootstrap-datepicker.it.js")}}"></script>
     <script src="{{asset("packages/zofe/rapyd/assets/autocomplete/typeahead.bundle.min.js")}}"></script>
     <script src="{{asset("packages/zofe/rapyd/assets/template/handlebars.js")}}"></script>
     <script src="{{asset("packages/zofe/rapyd/assets/autocomplete/bootstrap-tagsinput.min.js")}}"></script>
     <script src="{{asset("packages/zofe/rapyd/assets/colorpicker/js/bootstrap-colorpicker.min.js")}}"></script>
-    <!--script src="{{asset("packages/serverfireteam/rapyd-laravel/assets/colorpicker/js/bootstrap-colorpicker.min.js")}}"></script-->
+    <script src="{{asset("packages/serverfireteam/rapyd-laravel/assets/colorpicker/js/bootstrap-colorpicker.min.js")}}"></script>
 
-    
-    {!! Rapyd::scripts() !!} 
-    
+
+    {!! Rapyd::scripts() !!}
+
 </body>
 
 </html>

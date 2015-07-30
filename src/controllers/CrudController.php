@@ -56,15 +56,29 @@ class CrudController extends Controller
         $this->entity = $entity;
     }
     
-    public function addStylesToGrid($orderByColumn = 'id',$paginateCount = 10)
+    public function addStylesToGrid()
     {
-        
-        $this->grid->edit('edit', 'Edit', 'show|modify|delete');
+//        dd($this->grid);
 
-        $this->grid->orderBy($orderByColumn, 'desc');
-        $this->grid->paginate($paginateCount);
+        $this->grid->edit('edit', 'Edit', 'show|modify');
+
+        $this->grid->orderBy('id', 'desc');     
+        $this->grid->paginate(10);
         
     }
+
+    public function addStylesToGridDelete()
+    {
+
+        $this->grid->edit('edit', 'Edit', 'show|modify|delete');
+
+        $this->grid->orderBy('id', 'desc');
+        $this->grid->paginate(10);
+
+    }
+
+
+
 
     public function returnView()
     {
@@ -78,6 +92,7 @@ class CrudController extends Controller
             return \View::make('panelViews::all', array(
              'grid' 	      => $this->grid,
              'filter' 	      => $this->filter,
+             'edit' 	      => $this->edit,
 	     'current_entity' => $this->entity,
 	     'import_message' => (\Session::has('import_message')) ? \Session::get('import_message') : ''
             ));   

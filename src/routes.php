@@ -34,12 +34,9 @@ if (\Request::is('panel*'))
 Route::group(array('prefix' => 'panel' ,'before' => 'auth'), function()
 {               
     // main page for the admin section (app/views/admin/dashboard.blade.php)
-    Route::get('/', function()
-    {
-        return View::make('panelViews::dashboard');
-    });
+    Route::get('/', array('uses' => 'Serverfireteam\Panel\MainController@showDashboard'));
 
-   
+
     //Route::get('/createUser', array('uses' => 'Serverfireteam\Panel\UsersController@getCreateUser'));
     //Route::post('/createUser', array('uses' => 'Serverfireteam\Panel\UsersController@postCreateUser'));
     Route::any('/{entity}/export/{type}', array('uses' => 'Serverfireteam\Panel\ExportImportController@export'));

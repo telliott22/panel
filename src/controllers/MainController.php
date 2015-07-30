@@ -9,6 +9,8 @@ namespace Serverfireteam\Panel;
 
 use \Serverfireteam\Panel\libs\PanelElements;
 use Illuminate\Routing\Controller;
+use App\TasksToDo;
+use Serverfireteam\Panel\libs;
 
 class MainController extends Controller {
 
@@ -43,7 +45,29 @@ class MainController extends Controller {
             return $controller->callAction($methods, array('entity' => $entity));
         }
     
-    }    
+    }
+
+    public function showDashboard(){
+
+
+        $newVenues = TasksToDo::where('completed','=',0)
+                        ->join('venues','venues.venue_id','=','tasks_to_do.venue_id')
+                        ->get();
+
+        $bookingRequests = TasksToDo::where('completed','=',0)
+                        ->join('bookings','bookings.id','=','tasks_to_do.bookings_id')
+                        ->join('venues','venues.venue_id','=','bookings.venue_id')
+                        ->Join('users','users.id','=','bookings.user_id')
+                        ->select('users.*','venues.*','venues.name as venue_name','bookings.id as id','users.id as user_id','bookings.date_time as date','bookings.description as booking_description',
+                            \DB::raw('CONCAT(`users`.`first_name`, " ", `users`.`last_name` ) AS full_name'))
+                        ->get();
+
+//        return $bookingRequests;
+
+        return view('panelViews::dashboard',compact('newVenues','bookingRequests'));
+
+
+    }
 }
 
 

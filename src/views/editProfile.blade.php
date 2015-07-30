@@ -8,12 +8,9 @@
     </div>
 @endif
 
-@if ($demo_status == true)
-	<h4>You are not allowed to edit the profile in demo version of panel.</h4>
-@else
-
 <div class="row">
     <div class="col-xs-4" >
+
 
 {!!
  Form::model($admin, array( $admin->id))
@@ -32,8 +29,6 @@
 {!! Form::submit(\Lang::get('panel::fields.updateProfile'), array('class' => 'btn btn-primary')) !!}
 
 {!! Form::close() !!}
-
-@endif
 
   </div>    
 </div>

@@ -9,9 +9,9 @@
                 </div>
                             
             </div>
+
             <!-- /.row -->
             <div class="row box-holder">
-                
                 @if(is_array(\Serverfireteam\Panel\Link::returnUrls()))
                     @foreach (Serverfireteam\Panel\libs\dashboard::create() as $box)
                     <div class="col-lg-3 col-md-6">
@@ -29,7 +29,6 @@
                                 </div>
                             </div>
                                 <div class="panel-footer">
-
                                      <a href='{{$box['showListUrl']}}' class="pull-left">{{ \Lang::get('panel::fields.showList') }} <i class="icon ic-chevron-right"></i></a>
                                     <div class="pull-right"> <a class="add " href="{{$box['addUrl']}}">{{ \Lang::get('panel::fields.Add') }}  </a></div>
 
